@@ -4,15 +4,15 @@ with_readme = true
 [files]
 directories = ["src", "app", "ats-src", "cbits", "test", "bench"]
 templates = [ "src/Lib.hs"
-            , "shake.hs"
             , "{{ project }}.cabal"
             , "Setup.hs"
             , "app/Main.hs"
             , "cabal.project.local"
             , "test/Spec.hs"
-            , "ats-src/lib.dats"
+            , "ats-src/{{ project }}.dats"
             , "bench/Bench.hs"
             , "Setup.hs" ]
+scripts = [ "shake.hs" ]
 
 [config]
 version = "0.1.0.0"

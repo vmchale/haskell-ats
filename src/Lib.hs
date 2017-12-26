@@ -7,7 +7,7 @@ module Lib
 
 import           Foreign.C
 
-foreign import ccall unsafe ffactorial :: CInt -> CInt
+foreign import ccall unsafe factorial :: CInt -> CInt
 
 ffactorial :: Int -> Int
 ffactorial = fromIntegral . factorial . fromIntegral

@@ -24,7 +24,7 @@ main = shakeArgs shakeOptions { shakeFiles=".shake" } $ do
         if c /= ExitSuccess
             then error "patscc failure"
             else pure ()
-        cmd ["mv", "ats-bench_dats.c", "cbits/{{ project }}.c"]
+        cmd ["mv", "{{ project }}_dats.c", "cbits/{{ project }}.c"]
 
     "clean" ~> do
         cmd_ ["sn", "c"]
