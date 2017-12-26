@@ -15,6 +15,7 @@ templates = [ "src/Lib.hs"
             , ".travis.yml"
             , ".stylish-haskell.yaml"
             , ".hlint.yaml"
+            , ".yamllint"
             ]
 scripts = [ "shake.hs" ]
 
