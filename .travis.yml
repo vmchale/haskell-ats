@@ -38,8 +38,8 @@ install:
 script:
   - pip install yamllint
   - yamllint .travis.yml
-  - yamllint .stylish-haskell.yml
-  - yamllint .hlint.yml
+  - yamllint .stylish-haskell.yaml
+  - yamllint .hlint.yaml
   - yamllint .yamllint
   - curl -sL https://raw.githubusercontent.com/vmchale/tomlcheck/master/sh/check | sh -s .atsfmt.toml
   - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s shake.hs
