@@ -1,9 +1,12 @@
 module Main where
 
-import Criterion.Main
+import           Criterion.Main
+import           Lib
 
 main :: IO ()
 main =
-    defaultMain [ bgroup "head"
-                      [ bench "head" $ whnf head [1..] ]
+    defaultMain [ bgroup "factorial"
+                      [ bench "ffactorial" $ nf ffactorial 1000
+                      , bench "pureFactorial" $ nf pureFactorial 1000
+                      ]
                 ]
