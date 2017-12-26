@@ -19,6 +19,7 @@ templates = [ "src/Lib.hs"
             , ".gitignore"
             , ".ctags"
             , ".atsfmt.toml"
+            , ".gitattributes"
             ]
 scripts = [ "shake.hs" ]
 
