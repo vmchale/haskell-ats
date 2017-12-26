@@ -1,0 +1,34 @@
+---
+sudo: required
+matrix:
+  include:
+
+    - os: linux
+      language: python
+      addons:
+        - apt: {packages: [cabal-install-2.0, ghc-8.2.2]}
+        - sources: hvr-ghc
+
+cache:
+  directories:
+    - /usr/local/lib/ats2-postiats-0.3.8/
+    - /usr/local/bin
+
+before_install:
+  - export PATH=/opt/ghc/bin:$PATH
+
+install:
+  - wget http://ats-lang.sourceforge.net/IMPLEMENT/Postiats/ATS2-Postiats-0.3.8.tgz
+  - tar xvf ATS2-Postiats-0.3.8.tgz
+  - cd ATS2-Postiats-0.3.8 && ./configure && make && sudo make install
+  - cd ../
+  - rm -rf ATS2-Postiats-0.3.8
+
+script:
+  - pip install yamllint
+  - yamllint .travis.yml
+  - curl -sL https://raw.githubusercontent.com/vmchale/tomlcheck/master/sh/check | sh -s .atsfmt.toml
+  - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s shake.hs
+  - patscc -ccats ats-src/{{ project }}.dats
+  - mv {{ project }}_dats.c cbits/{{ project }}.c
+  - cabal new-build
