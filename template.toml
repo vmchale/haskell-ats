@@ -11,7 +11,8 @@ templates = [ "src/Lib.hs"
             , "cabal.project.local"
             , "test/Spec.hs"
             , "ats-src/lib.dats"
-            , "bench/Bench.hs" ]
+            , "bench/Bench.hs"
+            , "Setup.hs" ]
 
 [config]
 version = "0.1.0.0"
