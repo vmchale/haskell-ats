@@ -1,21 +1,32 @@
 ---
 sudo: required
+cache:
+  directories:
+    - $HOME/.ghc
+    - $HOME/.cabal
+    - /usr/local/lib/ats2-postiats-0.3.8/
+    - /usr/local/bin
+addons:
+  apt:
+    packages:
+      libgmp3-dev
+
 matrix:
   include:
 
     - os: linux
       language: python
       addons:
-        - apt: {packages: [cabal-install-2.0, ghc-8.2.2]}
-        - sources: hvr-ghc
-
-cache:
-  directories:
-    - /usr/local/lib/ats2-postiats-0.3.8/
-    - /usr/local/bin
+        - apt:
+          packages:
+            - cabal-install-head
+            - ghc-8.2.2
+          sources: hvr-ghc
 
 before_install:
   - export PATH=/opt/ghc/bin:$PATH
+  - cabal update
+  - pip install yamllint
 
 install:
   - wget http://ats-lang.sourceforge.net/IMPLEMENT/Postiats/ATS2-Postiats-0.3.8.tgz
@@ -23,12 +34,17 @@ install:
   - cd ATS2-Postiats-0.3.8 && ./configure && make && sudo make install
   - cd ../
   - rm -rf ATS2-Postiats-0.3.8
+  - cabal new-build --dependencies-only
 
 script:
   - pip install yamllint
   - yamllint .travis.yml
+  - yamllint .stylish-haskell.yml
+  - yamllint .hlint.yml
+  - yamllint .yamllint
   - curl -sL https://raw.githubusercontent.com/vmchale/tomlcheck/master/sh/check | sh -s .atsfmt.toml
   - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s shake.hs
   - patscc -ccats ats-src/{{ project }}.dats
   - mv {{ project }}_dats.c cbits/{{ project }}.c
   - cabal new-build
+  - cabal new-test
