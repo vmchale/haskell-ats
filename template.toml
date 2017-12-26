@@ -16,6 +16,8 @@ templates = [ "src/Lib.hs"
             , ".stylish-haskell.yaml"
             , ".hlint.yaml"
             , ".yamllint"
+            , ".gitignore"
+            , ".ctags"
             ]
 scripts = [ "shake.hs" ]
 

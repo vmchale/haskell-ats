@@ -10,18 +10,17 @@ addons:
   apt:
     packages:
       libgmp3-dev
-
 matrix:
   include:
 
-    - os: linux
-      language: python
+    - language: python
       addons:
-        - apt:
+        apt:
           packages:
             - cabal-install-head
             - ghc-8.2.2
-          sources: hvr-ghc
+          sources:
+            - hvr-ghc
 
 before_install:
   - export PATH=/opt/ghc/bin:$PATH
