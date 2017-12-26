@@ -6,4 +6,4 @@ main :: IO ()
 main = hspec $
     parallel $ describe "ffactorial" $
         prop "should agree with the pure Haskell function" $
-            \x -> x < 1 || ffactorial x == pureFactorial x
+            \x -> x < 1 || x > 12 || ffactorial x == pureFactorial x
