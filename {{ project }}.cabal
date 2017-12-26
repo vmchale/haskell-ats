@@ -10,8 +10,7 @@ maintainer:          {{ email }}
 copyright:           Copyright: (c) 2017 Vanessa McHale
 --category:            Web
 build-type:          Simple
-extra-source-files:  stack.yaml
-                   , mad-src/{{ project }}.mad
+extra-source-files:  cbits/{{ project }}.c
 extra-doc-files:     README.md
 cabal-version:       >=1.18
 
