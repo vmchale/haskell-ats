@@ -1,4 +1,4 @@
-constraints: hs +development
+constraints: {{ project }} +development
 optimization: 2
 with-compiler: ghc-8.2.2
 tests: True
