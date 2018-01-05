@@ -7,7 +7,7 @@ license:             {{ license }}
 license-file:        LICENSE
 author:              {{ name }}
 maintainer:          {{ email }}
-copyright:           Copyright: (c) 2017 Vanessa McHale
+copyright:           Copyright: (c) {{ year }} {{ name }}
 --category:            Web
 build-type:          Simple
 extra-source-files:  cbits/{{ project }}.c
