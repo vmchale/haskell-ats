@@ -20,6 +20,7 @@ templates = [ "src/Lib.hs"
             , ".ctags"
             , ".atsfmt.toml"
             , ".gitattributes"
+            , ".hspec"
             ]
 scripts = [ "shake.hs" ]
 
