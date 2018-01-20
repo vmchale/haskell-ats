@@ -1,1 +1,1 @@
-cbits/hs-ats-ffi.c linguist-generated=true
+cbits/*.c linguist-generated=true
