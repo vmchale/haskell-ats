@@ -21,8 +21,8 @@ templates = [ "src/Lib.hs"
             , ".atsfmt.toml"
             , ".gitattributes"
             , ".hspec"
+            , "atspkg.dhall"
             ]
-scripts = [ "shake.hs" ]
 
 [config]
 version = "0.1.0.0"
