@@ -21,7 +21,9 @@ Flag development {
 }
 
 custom-setup
-  build-depends:       ats-setup >= 0.1.0.3
+  setup-depends:      base >= 4.7 && < 5, 
+                      ats-setup >= 0.1.0.2,
+                      Cabal
 
 library
   c-sources:           cbits/{{ project }}.c

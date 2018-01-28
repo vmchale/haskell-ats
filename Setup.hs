@@ -2,4 +2,4 @@ import           Distribution.ATS
 import           Distribution.Simple
 
 main = defaultMainWithHooks $
-    atsUserHooks [ libgmp, intinf, atsPrelude [0,3,9] ]
+    atsUserHooks [ atsPrelude [0,3,9] ]
