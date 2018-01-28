@@ -9,7 +9,7 @@ author:              {{ name }}
 maintainer:          {{ email }}
 copyright:           Copyright: (c) {{ year }} {{ name }}
 --category:            Web
-build-type:          Simple
+build-type:          Custom
 extra-source-files:  cbits/{{ project }}.c
 extra-doc-files:     README.md
 cabal-version:       >=1.18
@@ -19,6 +19,9 @@ Flag development {
   manual: True
   default: False
 }
+
+custom-setup
+  build-depends:       ats-setup >= 0.1.0.3
 
 library
   c-sources:           cbits/{{ project }}.c
