@@ -6,6 +6,7 @@ cache:
     - $HOME/.cabal
     - /usr/local/lib/ats2-postiats-0.3.8/
     - /usr/local/bin
+    - $HOME/.atspkg
 addons:
   apt:
     packages:
@@ -28,12 +29,9 @@ before_install:
   - pip install yamllint
 
 install:
-  - wget http://ats-lang.sourceforge.net/IMPLEMENT/Postiats/ATS2-Postiats-0.3.8.tgz
-  - tar xvf ATS2-Postiats-0.3.8.tgz
-  - cd ATS2-Postiats-0.3.8 && ./configure && make && sudo make install
-  - cd ../
-  - rm -rf ATS2-Postiats-0.3.8
   - cabal new-build --dependencies-only
+  - curl -sSl https://raw.githubusercontent.com/vmchale/atspkg/master/bash/install.sh | bash -s
+  - atspkg -v
 
 script:
   - pip install yamllint
