@@ -42,9 +42,6 @@ script:
   - yamllint .hlint.yaml
   - yamllint .yamllint
   - curl -sL https://raw.githubusercontent.com/vmchale/tomlcheck/master/sh/check | sh -s .atsfmt.toml
-  - curl -sL https://raw.github.com/ndmitchell/hlint/master/misc/travis.sh | sh -s shake.hs
-  - patscc -ccats ats-src/{{ project }}.dats
-  - mkdir cbits
-  - mv {{ project }}_dats.c cbits/{{ project }}.c
+  - atspkg build
   - cabal new-build
   - cabal new-test
