@@ -27,6 +27,8 @@ custom-setup
 
 library
   c-sources:           cbits/{{ project }}.c
+  include-dirs:        ats-deps/prelude/ATS2-Postiats-include-0.3.9/ccomp/runtime
+                     , ats-deps/prelude/ATS2-Postiats-include-0.3.9
   hs-source-dirs:      src
   exposed-modules:     Lib
   build-depends:       base >= 4.7 && < 5
