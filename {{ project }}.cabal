@@ -12,7 +12,7 @@ copyright:           Copyright: (c) {{ year }} {{ name }}
 build-type:          Custom
 extra-source-files:  cbits/{{ project }}.c
 extra-doc-files:     README.md
-cabal-version:       >=1.18
+cabal-version:       1.18
 
 Flag development {
   Description: Enable `-Werror`
