@@ -1,4 +1,4 @@
-let pkg = https://raw.githubusercontent.com/vmchale/atspkg/master/dhall/default.dhall
+let prelude = https://raw.githubusercontent.com/vmchale/atspkg/master/dhall/atspkg-prelude.dhall
 
-in pkg //
+in prelude.default //
   { atsSource = [ "ats-src/{{ project }}.dats" ] }
