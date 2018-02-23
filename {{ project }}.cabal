@@ -22,7 +22,7 @@ Flag development {
 
 custom-setup
   setup-depends:      base >= 4.7 && < 5, 
-                      ats-setup >= 0.1.0.2,
+                      ats-pkg >= 2.6.0.0,
                       Cabal
 
 library

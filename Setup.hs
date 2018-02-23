@@ -1,5 +1,5 @@
-import           Distribution.ATS
 import           Distribution.Simple
+import           Language.ATS.Package
 
-main = defaultMainWithHooks $
-    atsUserHooks [ atsPrelude [0,3,9] ]
+main :: IO ()
+main = defaultMainWithHooks cabalHooks
