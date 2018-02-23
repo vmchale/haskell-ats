@@ -2,7 +2,7 @@ name:                {{ project }}
 version:             {{ version }}
 -- synopsis:
 -- description:
-homepage:            https://github.com/{{ github-username }}/{{ project }}#readme
+homepage:            https://github.com/{{ github_username }}/{{ project }}#readme
 license:             {{ license }}
 license-file:        LICENSE
 author:              {{ name }}
@@ -79,4 +79,4 @@ executable {{ project }}
 
 source-repository head
   type:     git
-  location: https://github.com/{{ github-username }}/{{ project }}
+  location: https://github.com/{{ github_username }}/{{ project }}
