@@ -22,6 +22,7 @@ templates = [ "src/Lib.hs"
             , ".gitattributes"
             , ".hspec"
             , "atspkg.dhall"
+            , "pkg.dhall"
             ]
 
 [config]
