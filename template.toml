@@ -2,7 +2,7 @@ license = "BSD3"
 with_readme = true
 
 [files]
-directories = ["src", "app", "ats-src", "cbits", "test", "bench"]
+directories = ["src", "app", "ats-src", "test", "bench"]
 templates = [ "src/Lib.hs"
             , "{{ project }}.cabal"
             , "Setup.hs"
