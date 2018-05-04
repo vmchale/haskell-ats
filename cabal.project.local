@@ -2,7 +2,6 @@ constraints: {{ project }} +development
            , lens -test-doctests
            , comonad -test-doctests
 optimization: 2
-with-compiler: ghc-8.2.2
 tests: True
 benchmarks: True
 documentation: True
