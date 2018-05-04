@@ -1,4 +1,4 @@
-import           Language.ATS.Package
+import           Distribution.ATS
 
 main :: IO ()
 main = atsPolyglotBuild
