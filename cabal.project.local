@@ -1,6 +1,7 @@
 constraints: {{ project }} +development
            , lens -test-doctests
            , comonad -test-doctests
+           , semigroupoids -doctests
 optimization: 2
 tests: True
 benchmarks: True
