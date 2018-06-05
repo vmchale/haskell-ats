@@ -21,8 +21,7 @@ Flag development {
 
 custom-setup
   setup-depends:      base >= 4.7 && < 5, 
-                      ats-pkg >= 2.10.1.5,
-                      Cabal
+                      ats-pkg >= 2.10.2.2
 
 library
   extra-libraries:     {{ project }}
