@@ -11,6 +11,7 @@ copyright:           Copyright: (c) {{ year }} {{ name }}
 --category:            Web
 build-type:          Custom
 extra-doc-files:     README.md
+                     CHANGELOG.md
 cabal-version:       1.18
 
 Flag development {

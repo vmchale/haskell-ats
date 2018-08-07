@@ -23,6 +23,7 @@ templates = [ "src/Lib.hs"
             , ".hspec"
             , "atspkg.dhall"
             , "pkg.dhall"
+            , "CHANGELOG.md"
             ]
 
 [config]
